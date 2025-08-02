@@ -57,9 +57,18 @@ const MessageCard = ({ message }) => {
         </li>
         <li>
           <strong>Received:</strong>{' '}
-          {new Date(message.createdAt).toLocaleString()}
+          {new Date(message.createdAt).toLocaleString('en-US', {
+            hour12: true,
+            month: 'numeric',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+          })}
         </li>
       </ul>
+
       <button
         onClick={handleReadClick}
         className={`mt-4 mr-3 ${

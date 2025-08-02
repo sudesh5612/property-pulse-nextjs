@@ -13,7 +13,7 @@ async function getUnreadMessageCount() {
     return { error: 'User ID is required' };
   }
 
-  const { userId } = sessionUser;
+  const userId = sessionUser.user.id;
 
   const count = await Message.countDocuments({
     recipient: userId,
